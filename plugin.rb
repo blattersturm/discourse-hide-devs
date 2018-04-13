@@ -34,7 +34,7 @@ after_initialize do
 
 			super
 
-			if ((user.group_ids.include? hide.id) && (opts[:hide_devs].to_s == "true"))
+			if ((user.group_ids.include? hide.id) && (opts[:hide_devs].to_s == "true" || opts[:raw].to_s == ""))
 				@user = elementsGroup.users.sample
 			else
 				@user = user
@@ -52,7 +52,7 @@ after_initialize do
 
 
 	DiscourseEvent.on(:post_created) do |post, opts, user|
-		next unless ((user.group_ids.include? hide.id) && (opts[:hide_devs].to_s == "true"))
+		next unless ((user.group_ids.include? hide.id) && (opts[:hide_devs].to_s == "true" || opts[:raw].to_s == ""))
 		PostOwnerChanger.new(post_ids: [post.id],
 				topic_id: post.topic_id,
 				new_owner: elementsGroup.users.sample,
