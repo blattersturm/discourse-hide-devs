@@ -39,7 +39,7 @@ export default {
             actions: {
               toggleHideDevs() { // handle the button pressed action.
                 this.toggleProperty('outletArgs.composer.hideDevs');
-                $(".toggle-hide-devs-btn").toggleClass("dis"); // toggle the button "dis" class.
+                $(".toggle-hide-devs-btn").toggleClass("btn-hover"); // toggle the button "btn-hover" class.
               }
             }
           });

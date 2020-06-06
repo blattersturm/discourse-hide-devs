@@ -1,6 +1,6 @@
 # name: discourse-hide-devs
 # about: Hide developers discourse plugin.
-# version: 2.0
+# version: 2.1
 # authors: CitizenFX Collective & Tom Grobbe
 # url: https://github.com/blattersturm/discourse-hide-devs
 
